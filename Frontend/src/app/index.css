@@ -350,6 +350,7 @@ button:hover {
   letter-spacing: -0.05em;
   color: var(--text);
   max-width: 11ch;
+  cursor:default;
 }
 
 .hero-left p {
@@ -357,12 +358,14 @@ button:hover {
   line-height: 1.75;
   color: var(--muted);
   max-width: 58ch;
+  cursor: default ;
 }
 
 .hero-icons {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  cursor: pointer;
 }
 
 .hero-icons span {
@@ -418,6 +421,7 @@ button:hover {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
+  cursor: pointer;
 }
 
 .stat-card {
@@ -541,6 +545,7 @@ button:hover {
   color: var(--text);
   margin: 18px 0 16px;
   max-width: 13ch;
+  cursor: default;
 }
 
 .center-text,
@@ -552,6 +557,7 @@ button:hover {
   line-height: 1.8;
   max-width: 760px;
   margin-bottom: 28px;
+  cursor: default;
 }
 
 .service-cards,

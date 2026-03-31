@@ -39,7 +39,7 @@ export default function Navbar() {
 
   return (
     <nav className={scrolled ? "navbar scrolled" : "navbar"}>
-      <h2 className="logo">HealthCare+</h2>
+      <h2 className="logo">Synapse Health</h2>
 
       <ul className="nav-links">
         <li><Link to="/">Home</Link></li>

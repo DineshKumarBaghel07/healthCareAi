@@ -30,9 +30,15 @@ export default function Login() {
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
-      const success = await handleLogin({ email, password });
-      if (success) {
-        navigate("/");
+      const user = await handleLogin({ email, password });
+      if (user) {
+        if (user.role === "superAdmin") {
+          navigate("/super-admin");
+        } else if (user.role === "doctor" || user.role === "admin") {
+          navigate("/doctor");
+        } else {
+          navigate("/");
+        }
       }
     }
   };

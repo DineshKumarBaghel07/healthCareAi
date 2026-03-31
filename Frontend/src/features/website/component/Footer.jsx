@@ -24,12 +24,12 @@ export default function Footer() {
           <p>Transparent guidance before, during, and after treatment.</p>
         </div>
 
-        <div className="footer-newsletter">
+        {/* <div className="footer-newsletter">
           <h4>Stay Connected</h4>
           <p>Subscribe for wellness insights and hospital updates.</p>
           <input type="email" placeholder="Enter your email" />
           <button>Subscribe</button>
-        </div>
+        </div> */}
       </div>
 
       <p className="copyright">&copy; 2026 HealthCare+. All Rights Reserved.</p>

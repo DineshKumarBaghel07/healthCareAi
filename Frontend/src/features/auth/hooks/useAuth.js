@@ -37,10 +37,11 @@ export const useAuth = () => {
       dispatch(setError(null));
       const data = await login({ email, password });
       dispatch(setUser(data.user));
-      return true;
+      window.localStorage.setItem("role", data.user?.role || "");
+      return data.user;
     } catch (error) {
       dispatch(setError(getApiErrorMessage(error, "Login failed")));
-      return false;
+      return null;
     } finally {
       dispatch(setLoading(false));
     }
@@ -52,8 +53,10 @@ export const useAuth = () => {
       dispatch(setError(null));
       const data = await getMe();
       dispatch(setUser(data.user));
+      window.localStorage.setItem("role", data.user?.role || "");
     } catch {
       dispatch(setUser(null));
+      window.localStorage.removeItem("role");
     } finally {
       dispatch(setLoading(false));
     }
@@ -69,6 +72,7 @@ export const useAuth = () => {
     } finally {
       dispatch(setUser(null));
       dispatch(setLoading(false));
+      window.localStorage.removeItem("role");
     }
   }, [dispatch]);
 
