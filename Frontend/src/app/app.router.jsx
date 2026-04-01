@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router";
 import Home from "../features/website/pages/Home";
 import About from "../features/website/pages/About";
 import Contact from "../features/website/pages/Contact";
+import Appointment from "../features/website/pages/Appointment";
+import Doctorlist from "../features/website/pages/Doctorlist";
 import Login from "../features/auth/pages/Login";
 import Register from "../features/auth/pages/Register";
 import Protected from "../features/website/component/Protected";
@@ -22,6 +24,14 @@ export const router = createBrowserRouter([
   {
     path: "/contact",
     element: <Contact />,
+  },
+  {
+    path: "/appointment",
+    element: <Appointment />,
+  },
+  {
+    path: "/doctors",
+    element: <Doctorlist />,
   },
   {
     path: "/login",

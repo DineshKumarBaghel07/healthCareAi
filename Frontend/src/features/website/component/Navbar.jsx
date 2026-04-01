@@ -44,6 +44,7 @@ export default function Navbar() {
       <ul className="nav-links">
         <li><Link to="/">Home</Link></li>
         <li><Link to="/about">About</Link></li>
+        <li><Link to="/doctors">Doctors</Link></li>
         <li><Link to="/contact">Contact</Link></li>
         <li>
           {user ? (

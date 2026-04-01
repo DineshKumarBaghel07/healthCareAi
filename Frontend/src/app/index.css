@@ -35,6 +35,16 @@ body {
   min-height: 100vh;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  cursor: default;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -128,10 +138,67 @@ button:hover {
 .operations,
 .testimonials,
 .about-page,
+.appointment-page,
+.doctor-list-page,
 .contact-page,
 .footer {
   width: min(1180px, calc(100% - 36px));
   margin: 0 auto;
+}
+
+.hero-marquee {
+  width: min(1180px, calc(100% - 36px));
+  margin: 18px auto 0;
+  overflow: hidden;
+  border: 1px solid rgba(11, 108, 255, 0.14);
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.78), rgba(216, 251, 255, 0.92));
+  box-shadow: 0 16px 36px rgba(18, 70, 179, 0.08);
+}
+
+.hero-marquee-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 48px;
+  padding: 12px 0;
+  animation: hero-marquee-scroll 22s linear infinite;
+}
+
+.hero-marquee-track span {
+  position: relative;
+  flex: 0 0 auto;
+  padding-left: 48px;
+  color: var(--primary-deep);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: default;
+}
+
+.hero-marquee-track span::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  transform: translateY(-50%);
+  box-shadow: 0 0 0 6px rgba(34, 199, 214, 0.14);
+}
+
+@keyframes hero-marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 24px));
+  }
 }
 
 .navbar {
@@ -530,6 +597,8 @@ button:hover {
 .operations,
 .testimonials,
 .about-page,
+.appointment-page,
+.doctor-list-page,
 .contact-page {
   padding: 76px 0;
 }
@@ -551,6 +620,8 @@ button:hover {
 .center-text,
 .operation-text,
 .about-text,
+.appointment-text,
+.doctor-list-text,
 .contact-text,
 .vision-right p {
   color: var(--muted);
@@ -627,6 +698,243 @@ button:hover {
 .feature:hover,
 .testimonial-card:hover {
   transform: translateY(-6px);
+}
+
+.doctor-list-hero {
+  display: grid;
+  gap: 18px;
+  margin-bottom: 36px;
+}
+
+.doctor-list-hero h1 {
+  font-family: "Sora", sans-serif;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  max-width: 14ch;
+  color: var(--text);
+}
+
+.doctor-list-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.doctor-highlight-card,
+.doctor-profile-card {
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.84);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+}
+
+.doctor-highlight-card {
+  padding: 22px;
+  display: grid;
+  gap: 6px;
+}
+
+.doctor-highlight-card strong {
+  font-family: "Sora", sans-serif;
+  font-size: 28px;
+  color: var(--primary-deep);
+}
+
+.doctor-highlight-card span {
+  color: var(--muted);
+}
+
+.doctor-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.doctor-profile-card {
+  overflow: hidden;
+  transition: transform 0.24s ease, box-shadow 0.24s ease;
+}
+
+.doctor-profile-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 28px 56px rgba(16, 33, 60, 0.16);
+}
+
+.doctor-profile-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.doctor-card-body {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+}
+
+.doctor-card-body h3 {
+  font-size: 19px;
+  color: var(--text);
+  letter-spacing: -0.03em;
+}
+
+.doctor-focus {
+  color: var(--muted);
+  line-height: 1.55;
+  font-size: 13px;
+}
+
+.doctor-meta-list {
+  display: grid;
+  gap: 7px;
+}
+
+.doctor-meta-list span {
+  padding: 9px 11px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(11, 108, 255, 0.08);
+  color: var(--text);
+  font-size: 12px;
+}
+
+.doctor-card-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 10px 14px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-deep));
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: 0 18px 32px rgba(11, 108, 255, 0.2);
+}
+
+.doctor-card-btn:hover {
+  box-shadow: 0 20px 38px rgba(11, 108, 255, 0.26);
+}
+
+.appointment-hero {
+  display: grid;
+  gap: 18px;
+  margin-bottom: 34px;
+}
+
+.appointment-hero h1 {
+  font-family: "Sora", sans-serif;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  max-width: 14ch;
+  color: var(--text);
+}
+
+.appointment-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.appointment-form-card,
+.appointment-info-card {
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.84);
+  border-radius: 28px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+}
+
+.appointment-form-card h3,
+.appointment-info-card h3 {
+  font-size: 26px;
+  color: var(--text);
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+
+.appointment-info-card p {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.appointment-form {
+  display: grid;
+  gap: 16px;
+}
+
+.appointment-form input,
+.appointment-form select,
+.appointment-form textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--text);
+  outline: none;
+}
+
+.appointment-form input:focus,
+.appointment-form select:focus,
+.appointment-form textarea:focus {
+  border-color: rgba(11, 108, 255, 0.35);
+  box-shadow: 0 0 0 4px rgba(11, 108, 255, 0.08);
+}
+
+.appointment-inline-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.appointment-btn {
+  justify-self: start;
+}
+
+.appointment-success-message {
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.18);
+  color: #166534;
+  font-weight: 700;
+}
+
+.appointment-tip-list {
+  display: grid;
+  gap: 12px;
+  margin: 22px 0;
+}
+
+.appointment-tip-item {
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(11, 108, 255, 0.08);
+}
+
+.appointment-tip-item strong {
+  font-size: 15px;
+  color: var(--text);
+}
+
+.appointment-support-box {
+  padding: 18px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(11, 108, 255, 0.1), rgba(34, 199, 214, 0.16));
+}
+
+.appointment-support-box h4 {
+  margin-bottom: 8px;
+  font-family: "Sora", sans-serif;
+  color: var(--text);
 }
 
 .vision {
@@ -783,6 +1091,14 @@ button:hover {
     grid-template-columns: 1fr;
   }
 
+  .appointment-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .doctor-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .hero-left h1,
   .section-title,
   .vision-right h2,
@@ -810,6 +1126,8 @@ button:hover {
   .service-cards,
   .operation-grid,
   .about-features,
+  .doctor-list-highlights,
+  .doctor-card-grid,
   .footer-grid,
   .testimonial-cards,
   .hero-stats {
@@ -844,6 +1162,14 @@ button:hover {
   .hero {
     padding-top: 42px;
     gap: 34px;
+  }
+
+  .hero-marquee {
+    width: min(100% - 20px, 1180px);
+  }
+
+  .hero-marquee-track {
+    animation-duration: 18s;
   }
 
   .hero-right img,

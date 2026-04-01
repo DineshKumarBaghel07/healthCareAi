@@ -29,7 +29,7 @@ export default function Operations() {
         </div>
 
         <div className="operation-card">
-          <img src="https://images.unsplash.com/photo-1516549655669-df88006bdb03" alt="Gynecology"/>
+          <img src="https://blog.healtether.com/wp-content/uploads/2025/02/gynecology-clinic.jpg" alt="Gynecology"/>
           <h4>Gynecology Department</h4>
           <p>Dedicated women’s health services delivered with privacy and care.</p>
         </div>
