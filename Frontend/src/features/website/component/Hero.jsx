@@ -1,13 +1,15 @@
+import { Link } from "react-router";
+
 export default function Hero() {
   const announcement =
     "A Predictive AI Ecosystem for Multi-Pathy Wellness, Social Patient-Support, and Integrated Clinical Governance";
 
   return (
     <>
-      <div className="hero-marquee" aria-label="Healthcare platform announcement">
+      <div className="hero-marquee">
         <div className="hero-marquee-track">
           <span>{announcement}</span>
-          <span aria-hidden="true">{announcement}</span>
+   cd        <span>{announcement}</span>
         </div>
       </div>
 
@@ -18,7 +20,7 @@ export default function Hero() {
 
           <p>
             Book appointments, connect with trusted doctors, and access
-            personalized support from a platform built to feel seamless at every
+            personalized support from a platform built to feel seamless at everyw
             step.
           </p>
 
@@ -27,6 +29,13 @@ export default function Hero() {
             <span>Digital Prescriptions</span>
             <span>Emergency Response</span>
             <span>Continuous Care</span>
+          </div>
+
+          {/* ✅ BOOK BUTTON */}
+          <div style={{ marginTop: "20px" }}>
+            <Link to="/appointment" className="hero-btn">
+              Book Appointment
+            </Link>
           </div>
 
           <div className="hero-stats">

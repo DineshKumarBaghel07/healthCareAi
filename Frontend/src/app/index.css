@@ -33,6 +33,7 @@ body {
     linear-gradient(180deg, #f8fbff 0%, #edf4ff 100%);
   color: var(--text);
   min-height: 100vh;
+  /* background-color: red; */
 }
 
 h1,
@@ -1203,4 +1204,21 @@ button:hover {
   .chatbot-modal-panel {
     width: min(100%, 380px);
   }
+}
+
+
+.hero-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #0b6cff, #22c7d6);
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.hero-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
 }

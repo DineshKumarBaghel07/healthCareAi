@@ -3,8 +3,8 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-grid">
         <div className="footer-about">
-          <span className="eyebrow footer-eyebrow">HealthCare+</span>
-          <h3>HealthCare+</h3>
+          <span className="eyebrow footer-eyebrow">Synapse Health</span>
+          <h3>Synapse Health</h3>
           <p>
             A modern healthcare experience shaped by compassionate clinicians,
             intelligent systems, and beautifully simple patient journeys.
